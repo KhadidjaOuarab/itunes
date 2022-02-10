@@ -1,5 +1,44 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #61dafb;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.effacer {
+  padding: 5px 5px;
+  background-color: #2a0845;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+ 
+}
+
+.search {
+  position: relative;
+}
+.inputSearch {
+  width: 350px;
+  background-color: white;
+  border: 1px;
+  border-radius: 15px;
+  gap: 20px;
+  height: 30px;
+}
+.panier {
+  width: 30px;
+  height: 30px;
+}
 .App {
   text-align: center;
+  background-color: #475063;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
