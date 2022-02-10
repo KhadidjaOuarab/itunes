@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import React from 'react'
 import './App.css'
-import Spec1 from './Pages/Spec1'
+import {useSelector, useDispatch} from 'react-redux'
+import Spec1 from './Pages/Spec1.jsx'
+import { Routes, Route, Link } from "react-router-dom";
 
-import store from './store';
-import { Provider } from 'react-redux';
 function App() {
-  const [count, setCount] = useState(0)
+const dispatch = useDispatch();
+
 
   return (
     <div className="App">
-      <Provider store={store}>
-        <Spec1 />
-      </Provider>
+      <Routes>
+        <Route path="/" element={<Spec1 />} />
+       
+      </Routes>
     </div>
-  )
+  );
 }
 
 export default App

@@ -1,24 +1,24 @@
-import { ADD_ONE } from './actions';
-
 const initialState = {
-    AlbumArtisteName: []
-};
-
-function reducer(state = initialState, action) {
-
-switch(action.type) {
-
-case ADD_ONE:
-return {
-   
-    AlbumArtisteName: state.AlbumArtisteName};
-
-console.log('-+++++++++++++++++++++++++++++++');
-console.log(AlbumArtisteName);
-console.log('=+++++++++++++++++++++++++++++++=');
-
-default:
-return state;
+    album: [],
+    inputVal:""
 }
+
+
+const reducers=  (state = initialState, action) => {
+
+  switch (action.type) {
+    case "SETINPUTVAL":
+      console.log(action.payload);
+      return { ...state, inputVal: action.payload };
+
+    case "SETAlbum":
+      console.log(action.payload);
+      return { ...state, album: action.payload };
+
+    default:
+      return state;
+  }
 }
-export default reducer;
+
+
+export default reducers;

@@ -17,7 +17,11 @@
   margin-top: 10px;
  
 }
-
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .search {
   position: relative;
 }

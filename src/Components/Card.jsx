@@ -1,12 +1,13 @@
 import React from 'react'
 
-function Card({ artisteName }) {
+function Card({ artisteName,name }) {
     
     return (
        
-        <div >
+        <div className='card'>
 
             <p >{artisteName}</p>
+            <p >{name}</p>
 
         </div>
     )
