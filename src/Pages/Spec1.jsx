@@ -1,36 +1,46 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
+import React, { useEffect,useState }  from 'react'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import Navbar from '../Components/Navbar'
 import Card from '../Components/Card'
 import { useSelector, useDispatch } from "react-redux";
-import { setAlbum,setInputVal } from "../actions";
+import { actionAlbum,actionAlbumSearch } from "../Actions/actions";
+
 function Spec1() {
 
-  const album =  useSelector((state) => state.album);
-  const inputVal = useSelector((state) => state.inputVal);
   const dispatch = useDispatch();
+  const album =  useSelector((state) => state.album);
+  const albumSearch = useSelector((state) => state.albumSearch);
+  //const [albumSearch, setSearch] = useState([])
+  const [inputVal, setInputVal] = useState('');
   
   useEffect(() => {
     axios.get("https://rss.applemarketingtools.com/api/v2/fr/music/most-played/25/songs.json")
-      .then((res) => dispatch(setAlbum(res.data.feed.results.map((el) => {return { ...el }; }))))
+      .then((res) => dispatch(actionAlbum(res.data.feed.results)))
       .then(console.log(album));
   }, []);
     
   
   function search() {
+    for (let i = 0; i < album.length; i++) {
+      if (album[i].artistName == inputVal) {
+        dispatch(actionAlbumSearch( album[i]))
+        console.log('====================================');
+        console.log(albumSearch);
+        console.log('====================================');
+      }
+    }
     
   }
-    function getValue() {
-      
-    }
+
+  
+  const getValue = (e) => {
+    setInputVal((e.target.value))
+
+  }
   return (
     <div>
       <Navbar searchFunction={search} getValue={getValue} type="text" inputVal={inputVal} />
-      {album.map((ele) => (
-        <Card artisteName={ele.artistName} name={ele.name}/>
-
-      ))}
+      <p>{albumSearch.artistName}</p>
     </div>
   )
 }
