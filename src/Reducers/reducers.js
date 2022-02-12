@@ -1,7 +1,7 @@
 const initialState = {
   album: [],
   albumSearch: [],
-  panier: []
+  panierTab: []
 }
 
 
@@ -16,8 +16,8 @@ const reducers = (state = initialState, action) => {
       console.log(action.payload);
       return { ...state, albumSearch: action.payload };
     case "actionPanier":  
-    console.log(action.payload);   
-      return { ...state, panier: action.payload };
+    //console.log(action.payload);   
+      return { ...state, panierTab: action.payload };
 
 
     default:
