@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card({ artisteName,name , picture, kind}) {
+function Card({ artisteName,name , picture, kind,AddPanier}) {
     
     return (
        
@@ -9,7 +9,7 @@ function Card({ artisteName,name , picture, kind}) {
             <p>{kind}</p>
             <p >{artisteName}</p>
             <p >{name}</p>
-           
+            <input type='submit' value='Ajouter' className='effacer' onClick={AddPanier} />
         </div>
     )
 }

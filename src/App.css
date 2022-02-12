@@ -31,14 +31,17 @@
   justify-content: center;
   align-items: center;
   gap: 1px;
+  border-style: solid;
+  border-width: thick;
 }
 
 
 .album{
-  display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+   
     
 }
 .img{

@@ -39,11 +39,14 @@ function deleteFunction() {
     setInputVal('')
   };
 
+  function AddPanier() {
+    
+  }
   return (
     <div>
       <Navbar deleteFunction={deleteFunction} searchFunction={search} getValue={getValue} inputVal={inputVal} />
     <div className='album'>
-      {albumSearch.map((ele) => (<Card key={ele.name} kind= {ele.kind} artisteName={ele.artistName} name={ele.name} picture={ele.artworkUrl100}/>))}
+      {albumSearch.map((ele) => (<Card key={ele.name} kind= {ele.kind} artisteName={ele.artistName} name={ele.name} picture={ele.artworkUrl100} AddPanier={AddPanier}/>))}
       </div>
     </div>
   )
