@@ -10,7 +10,6 @@ function Spec1() {
   const dispatch = useDispatch();
   const album = useSelector((state) => state.album);
   const albumSearch = useSelector((state) => state.albumSearch);
-  //const [albumSearch, setSearch] = useState([])
   const [inputVal, setInputVal] = useState('');
 
   useEffect(() => {
@@ -20,44 +19,32 @@ function Spec1() {
   }, []);
 
 
-  function search1() {
-
-    //dispatch(actionAlbumSearch( album.includes(inputVal)));
-    for (let i = 0; i < album.length; i++) {
-      if (album[i].artistName == inputVal) {
-        dispatch(actionAlbumSearch(album[i]))
-        // console.log('====================================');
-        // console.log(albumSearch);
-        // console.log('====================================');
-      }
-    }
-
-  }
-
-
   const getValue = (e) => {
     setInputVal((e.target.value))
 
   }
-
+function deleteFunction() {
+  setInputVal('')
+}
   function search() {
-    dispatch(actionAlbumSearch(album.filter((el) => {
-      //if no input the return the original
+    dispatch(actionAlbumSearch(album.filter(
+      (ele) => {
       if (inputVal === "") {
-        return el;
+        return ele;
       }
-      //return the item which contains the user input
       else {
-        return el.artistName.toLowerCase().includes(inputVal.toLowerCase());
+        return ele.artistName.toLowerCase() === (inputVal.toLowerCase());
       }
-    })))
+    })));
+    setInputVal('')
   };
 
   return (
     <div>
-      <Navbar searchFunction={search} getValue={getValue} inputVal={inputVal} />
-      {albumSearch.map((ele) => (<p key={ele.name}> {ele.artistName}{ele.id} </p>))}
-     
+      <Navbar deleteFunction={deleteFunction} searchFunction={search} getValue={getValue} inputVal={inputVal} />
+    <div className='album'>
+      {albumSearch.map((ele) => (<Card key={ele.name} kind= {ele.kind} artistName={ele.artistName} name={ele.name} picture={ele.artworkUrl100}/>))}
+      </div>
     </div>
   )
 }

@@ -19,8 +19,21 @@
 }
 .card{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+}
+.album{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    
+}
+.img{
+  width: 130px;
+  height: 150px;
 }
 .search {
   position: relative;

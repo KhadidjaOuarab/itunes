@@ -1,7 +1,6 @@
 const initialState = {
     album: [],
     albumSearch : []
-   
 }
 
 
