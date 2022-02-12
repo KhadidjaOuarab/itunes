@@ -11,6 +11,7 @@ function Spec1() {
   const album = useSelector((state) => state.album);
   const albumSearch = useSelector((state) => state.albumSearch);
   const [inputVal, setInputVal] = useState('');
+  const [position, setPosition] = useState('right');
 
   useEffect(() => {
     axios.get("https://rss.applemarketingtools.com/api/v2/fr/music/most-played/25/songs.json")
@@ -37,14 +38,17 @@ function deleteFunction() {
       }
     })));
     setInputVal('')
+    setPosition('left')
   };
 
   function AddPanier() {
     
   }
+  
+
   return (
     <div>
-      <Navbar deleteFunction={deleteFunction} searchFunction={search} getValue={getValue} inputVal={inputVal} />
+      <Navbar position={position} deleteFunction={deleteFunction} searchFunction={search} getValue={getValue} inputVal={inputVal} />
     <div className='album'>
       {albumSearch.map((ele) => (<Card key={ele.name} kind= {ele.kind} artisteName={ele.artistName} name={ele.name} picture={ele.artworkUrl100} AddPanier={AddPanier}/>))}
       </div>

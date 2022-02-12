@@ -11,9 +11,27 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #61dafb;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 20px;
+ /* // padding-right: 30px; */
+  
 }
+.logo{
+  width: 100px;
+}
+.navbarInput {
+  display: flex;
+  flex-direction: row;
+ 
+}
+.right{
+  position: absolute;
+  right: 50px;
+}
+
+.left{
+  position: absolute;
+  left: 50px;
+ }
 .effacer {
   padding: 5px 5px;
   background-color: #2a0845;
