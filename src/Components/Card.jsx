@@ -9,7 +9,7 @@ function Card({ artisteName,name , picture, kind}) {
             <p>{kind}</p>
             <p >{artisteName}</p>
             <p >{name}</p>
-
+           
         </div>
     )
 }
