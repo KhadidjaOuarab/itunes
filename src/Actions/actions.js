@@ -12,4 +12,10 @@
     };
   };
   
+  export const actionPanier = (list) => {
+    return {
+      type: "actionPanier",
+      payload: list,
+    };
+  };
   

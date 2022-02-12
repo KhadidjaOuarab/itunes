@@ -1,26 +1,28 @@
 const initialState = {
-    album: [],
-    albumSearch : []
+  album: [],
+  albumSearch: [],
+  panier: []
 }
 
 
-const reducers=  (state = initialState, action) => {
+const reducers = (state = initialState, action) => {
 
   switch (action.type) {
-   
+
     case "actionAlbum":
-//      console.log(action.payload);
+      //      console.log(action.payload);
       return { ...state, album: action.payload };
     case "actionAlbumSearch":
-      console.log('////////////////////////////////////');
-      console.log(state.albumSearch );
-      console.log('////////////////////////////////////');
-        return { ...state, albumSearch: action.payload };
-    
+      console.log(action.payload);
+      return { ...state, albumSearch: action.payload };
+    case "actionPanier":  
+    console.log(action.payload);   
+      return { ...state, panier: action.payload };
+
 
     default:
-     
-       
+
+
       return state;
   }
 }
