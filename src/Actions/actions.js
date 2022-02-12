@@ -1,10 +1,3 @@
-// export const actionInputVal= (inputVal) => {
-//     return {
-//       type: "actionInputVal",
-//       payload: inputVal,
-//     };
-//   };
-  
   export const actionAlbum = (list) => {
     return {
       type: "actionAlbum",
