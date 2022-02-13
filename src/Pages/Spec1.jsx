@@ -46,7 +46,7 @@ function Spec1() {
     setInputVal('')
     setPosition('left')
   };
-  
+
 
   return (
     <div>
@@ -57,7 +57,7 @@ function Spec1() {
           {albumSearch.map((ele) => (<Card key={ele.id} kind={ele.kind}
             artisteName={ele.artistName} name={ele.name} picture={ele.artworkUrl100}
             AddPanier={() => {
-              dispatch(actionPanier([...panierTab,ele]))
+              dispatch(actionPanier([...panierTab, ele]))
             }}
 
           />))}
@@ -65,10 +65,25 @@ function Spec1() {
       </div>
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}  >
-       <div> 
-          {/* <p>{panierTab.artistName}</p> */}
-          {panierTab.map((ele) => (<p key={ele.id} > {ele.artistName}  </p>))}
-       </div>
+        <div>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Artiste Name</th>
+              <th>Price</th>
+            </tr>
+
+            {panierTab.map((ele) => (
+              <tr key={ele.id}>
+                <td> {ele.name}</td>
+                <td> {ele.artistName}</td>
+                <td></td>
+              </tr>
+            ))}
+          </table>
+          Total price: 111111$<p>Number of items :{panierTab.length}</p>
+         
+        </div>
         <div>
           <button onClick={() => setModalIsOpen(false)}>Fermer</button>
         </div>
