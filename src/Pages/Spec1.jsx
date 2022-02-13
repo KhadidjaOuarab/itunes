@@ -51,7 +51,7 @@ function Spec1() {
   return (
     <div>
       <div>
-        <Navbar panierParam={() => setModalIsOpen(true)}
+        <Navbar panierParam={() => setModalIsOpen(true)} Logo={'../src/Assets/itunes.png'}
           position={position} deleteFunction={deleteFunction} searchFunction={search} getValue={getValue} inputVal={inputVal} />
         <div className='album'>
           {albumSearch.map((ele) => (<Card key={ele.id} kind={ele.kind}

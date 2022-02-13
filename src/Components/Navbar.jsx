@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import '../App.css'
 import imag from '../Assets/panier.png'
+import {Link } from "react-router-dom";
 
-function Navbar({ searchFunction, inputVal, getValue, deleteFunction, position,panierParam }) {
+function Navbar({Logo, searchFunction, inputVal, getValue, deleteFunction, position, panierParam }) {
 
-   
+
     return (
-        <div>
-            <div className='navbar'>
-                <p className='logo'>LOGO</p>
+        <>
+            <nav className='navbar'>
+                <Link to="/">
+                    <img src={Logo} />
+                </Link>
                 <div className='navbarInput'>
                     <div className={position}>
                         <input type='text' className='inputSearch' onChange={getValue} value={inputVal} />
@@ -22,9 +25,9 @@ function Navbar({ searchFunction, inputVal, getValue, deleteFunction, position,p
 
                 </div>
 
-            </div>
-           
-        </div>
+            </nav>
+
+        </>
     )
 }
 
