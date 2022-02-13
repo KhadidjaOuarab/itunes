@@ -16,7 +16,9 @@ const reducers = (state = initialState, action) => {
       console.log(action.payload);
       return { ...state, albumSearch: action.payload };
     case "actionPanier":  
-    //console.log(action.payload);   
+    console.log('99999999999999999999999999999999');
+    console.log(state.panierTab);   
+    console.log('99999999999999999999999999999999');
       return { ...state, panierTab: action.payload };
 
 

@@ -5,7 +5,7 @@ import Card from '../Components/Card'
 import { useSelector, useDispatch } from "react-redux";
 import { actionAlbum, actionAlbumSearch, actionPanier } from "../Actions/actions";
 import Modal from 'react-modal'
-// import { Link } from 'react-router-dom'
+
 Modal.setAppElement('#root')
 
 function Spec1() {
@@ -57,7 +57,7 @@ function Spec1() {
           {albumSearch.map((ele) => (<Card key={ele.id} kind={ele.kind}
             artisteName={ele.artistName} name={ele.name} picture={ele.artworkUrl100}
             AddPanier={() => {
-              dispatch(actionPanier(ele))
+              dispatch(actionPanier([...panierTab,ele]))
             }}
 
           />))}
@@ -66,7 +66,8 @@ function Spec1() {
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}  >
        <div> 
-          <p>{panierTab.artistName}</p>
+          {/* <p>{panierTab.artistName}</p> */}
+          {panierTab.map((ele) => (<p key={ele.id} > {ele.artistName}  </p>))}
        </div>
         <div>
           <button onClick={() => setModalIsOpen(false)}>Fermer</button>
