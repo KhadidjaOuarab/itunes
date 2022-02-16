@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 img{
@@ -36,16 +36,21 @@ img{
   position: absolute;
   left: 50px;
  }
-.effacer {
-  padding: 5px 5px;
+.delete {
+  padding: 4px 4px;
   background-color: #2a0845;
-  border-radius: 30px;
+  border-radius: 15px;
   border: none;
   color: white;
   font-size: 18px;
   cursor: pointer;
   margin-top: 10px;
- 
+  position:relative;
+  right: 30px;
+}
+
+.search{
+  border: none;
 }
 .card{
   display: flex;
@@ -73,13 +78,13 @@ img{
 .search {
   position: relative;
 }
+
 .inputSearch {
-  width: 350px;
-  background-color: white;
-  border: 1px;
-  border-radius: 15px;
-  gap: 20px;
-  height: 30px;
+   width: 30vw;
+   border-radius: 15px;
+   height: 30px; 
+   padding: 15px;
+   border:none
 }
 .panier {
   width: 30px;
